@@ -1,0 +1,33 @@
+audit_file_dest='#ORACLE_BASE#/admin/#SIDNAME#/adump'
+diagnostic_dest='#ORACLE_BASE#'
+
+control_files='#DF_PATH#/control_01.ora','#DF_PATH#/control_02.ora'
+db_block_size=8192
+db_name='#SIDNAME#'
+db_domain='LIFERAY.COM'
+
+aq_tm_processes=1
+job_queue_processes=20
+open_cursors=300
+processes=100
+recyclebin=OFF
+remote_login_passwordfile=EXCLUSIVE
+compatible ='11.2.0'
+
+sga_target=512m
+pga_aggregate_target=256m
+
+undo_management=AUTO
+undo_tablespace=UNDO
+
+#db_recovery_file_dest='#ORACLE_BASE#/fra'
+db_recovery_file_dest='/home/orabackup'
+
+db_recovery_file_dest_size=20G
+
+#fast_start_mttr_target=3600
+#log_checkpoint_interval=0
+#log_checkpoint_timeout=0
+#log_archive_dest_1='LOCATION=/oradata/portal/archive MANDATORY'
+log_archive_dest_1='LOCATION=USE_DB_RECOVERY_FILE_DEST'
+
